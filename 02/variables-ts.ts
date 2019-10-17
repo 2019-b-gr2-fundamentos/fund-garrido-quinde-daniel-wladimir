@@ -1,5 +1,6 @@
+
 /*
-Nombre: Daniel GArrido  
+Nombre: Daniel GArrido
 Fecha actualizacion: 17-10-2019
 Descripcion: Ejemplos de variables primitivas en JS
 */
@@ -22,6 +23,6 @@ null        Vacio               Ej: null
 // en kotlin var edad: Integer = 30; -> Mutable
 // en kotlin val edad: Integer = 30; -> Inmutable
  
-let edad = 30; // Mutable -> cambia
-const IVA = 12;
-let sueldo = 0;
+let sueldo=0;
+
+ 
