@@ -1,1 +1,4 @@
-php
+<?php 
+print 'hola mundo'
+
+ ?>
