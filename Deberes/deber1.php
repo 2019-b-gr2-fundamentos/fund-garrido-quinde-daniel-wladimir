@@ -12,7 +12,7 @@ $resource='Un valor tipo resource es una variable especial, que contiene una ref
 $null='El valor especial NULL representa una variable sin valor. NULL es el único valor posible del tipo null.';
 
 
-
+print'Hola mundo xd'.'<br>';
 print'Existen 8 tipos de variables primitivas en php'.'<br>';
 echo'Escalares:'.$Escalares[0].','.$Escalares[1].','.$Escalares[2].','.$Escalares[3].'<br>';
 echo'compuestos:'.$compuestos[0].','.$compuestos[1].'<br>';
