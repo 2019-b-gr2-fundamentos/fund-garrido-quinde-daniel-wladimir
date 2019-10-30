@@ -53,3 +53,104 @@ si se apaga la primera alarma o me hago bolita o el celular esta descargado o am
 
 
 */
+
+
+
+
+
+// Condicionales no boolenaos, el tryty y el falsy no funcionan en todos los lenguajes
+// TRUTY
+
+if(""){  // Un string vacio es un Falsy
+    console.log("Truty");
+}else{
+    console.log("Falsy");
+}
+
+
+if("adb"){  // Un string con algo es truty
+    console.log("Truty");
+}else{
+    console.log("Falsy");
+}
+
+
+
+if(-1){  // Un numero negativo es truty
+    console.log("Truty");
+}else{
+    console.log("Falsy");
+}
+
+//Todos los numeros excepto el cero son truty 
+
+
+if(null){  // El nulo es falsy
+    console.log("Truty");
+}else{
+    console.log("Falsy");
+}
+
+//////////////////////////////-----> switch <----------------------------------------------------
+//El switch solo funciona para casos especificos
+
+/*
+const calculo = "sumar"; //suamr restar multiplicar dividir
+
+switch(calculo) {
+    // code block
+      break;
+    case "restar":
+      // code block
+      break;
+    case "multiplicar":
+      // code block
+      break;
+    case "dividir":
+      // code block
+      break;
+    default:
+      // code block
+  
+    case "sumar":
+        }
+
+La computadora empieza con el switch comparado uno por uno los case
+si ponemos el break, al momento de comparar se detienen al encontrar el caso a desear.
+El break nos ayuda a no desperdiciar comparaciones  
+prompt para cojer datos del navegador
+Recuerda probar esto 
+*/ 
+const edadstring = prompt("Ingresar numero");
+const edad = Number(edadstring);
+
+if(edad <= 6){
+  console.log("guagua")
+}
+ 
+if(edad > 6 && edad <= 18){
+    console.log("guambra")
+  }
+ 
+if(edad > 18 && edad <= 65 ){
+    console.log("longo")
+  }
+ 
+if(edad > 65){
+    console.log("ruko")
+  }
+   
+console.log()
+
+/**
+ 6 Guagua
+ 18 Guambra
+ 65 Longo
+66 ruku
+ */
+
+
+
+
+
+ 
