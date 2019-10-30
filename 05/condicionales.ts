@@ -6,7 +6,7 @@ if (casado == true){
     console.log("No estoy casado");
 }
 
-if (casado != false){  // Expresion --> Booleano    // con el != ponemos "distinto
+if (casado =! false){  // Expresion --> Booleano    // con el != ponemos "distinto
     console.log("No estoy casado");
 } else {
     console.log("Si estoy casado");
@@ -14,7 +14,7 @@ if (casado != false){  // Expresion --> Booleano    // con el != ponemos "distin
 
 
 const tengoMosa = false;
-const casadoYMosero = casado ==true && tengoMosa ==true;
+const casadoYMosero = casado ==true && tengoMosa == true;
 if(casadoYMosero){
     console.log("Casado y mosero");
 } else{
