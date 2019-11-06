@@ -90,3 +90,68 @@ if( gradorealnofakedos + gradorealnofake < 180){
 }else{
     console.log("la sumatoria de angulos de un triangulo es 180");
 }
+
+//Ingresar controles 1 y 2 y luego poner las notas de las pruebas sobre 10 y posteriormente  los examenes sobre 10
+
+const control1 = prompt("ingrese la nota del control 1");
+const control1nofake = Number(control1);
+
+const prueba1 = prompt("ingrese la nota de la prueba 1");
+const prueba1nofake = Number(prueba1);
+
+const examen1 = prompt("ingrese la nota del examen 1");
+const examen1nofake = Number(examen1);
+
+const control2 = prompt("ingrese la nota del control 2");
+const control2nofake = Number(control2);
+
+const prueba2 = prompt("ingrese la nota de la prueba 2");
+const prueba2nofake = Number(prueba2);
+
+const examen2 = prompt("ingrese la nota del examen 2");
+const examen2nofake = Number(examen2);
+
+const promedio1 = ((prueba1nofake * 2.5) + control1 + (examen1nofake * 2.5)); 
+const proemdio2 = ((prueba2nofake * 2.5) + control2 + (examen2nofake * 2.5));
+
+const notafinal = (proemdio2 + promedio1);
+const notafinalxd = Number(notafinal);
+if(notafinalxd >= 14 && notafinalxd > 9){
+    console.log("pasaste el semestre campeon")
+}else{
+    console.log("lee abajo")
+}
+
+if(notafinalxd <= 9){
+    console.log("segunda es todo")
+}
+
+
+////////ejemplos switch
+const diadelasemana = prompt("ingrese el numero");
+const diadelasemananofake = Number(diadelasemana);
+switch (diadelasemananofake) { 
+    case 1: 
+       document.write("Es Lunes") 
+       break 
+    case 2: 
+       document.write("Es Martes") 
+       break 
+    case 3: 
+       document.write("Es Miércoles") 
+       break 
+    case 4: 
+       document.write("Es Jueves") 
+       break 
+    case 5: 
+       document.write("Es viernes") 
+       break 
+    case 6: 
+    case 7: 
+       document.write("Es fin de semana") 
+       break 
+    default: 
+       document.write("Ese día no existe") 
+}
+
+///
