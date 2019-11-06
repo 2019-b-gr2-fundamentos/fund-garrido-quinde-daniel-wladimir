@@ -128,30 +128,96 @@ if(notafinalxd <= 9){
 
 
 ////////ejemplos switch
+// Dia de la semana
 const diadelasemana = prompt("ingrese el numero");
 const diadelasemananofake = Number(diadelasemana);
 switch (diadelasemananofake) { 
     case 1: 
-       document.write("Es Lunes") 
+       console.log("Es Lunes") 
        break 
     case 2: 
-       document.write("Es Martes") 
+        console.log("Es Martes") 
        break 
     case 3: 
-       document.write("Es Miércoles") 
+        console.log("Es Miércoles") 
        break 
     case 4: 
-       document.write("Es Jueves") 
+        console.log("Es Jueves") 
        break 
     case 5: 
-       document.write("Es viernes") 
+        console.log("Es viernes") 
        break 
     case 6: 
     case 7: 
-       document.write("Es fin de semana") 
+        console.log("Es fin de semana") 
        break 
     default: 
-       document.write("Ese día no existe") 
+        console.log("Ese día no existe") 
 }
 
-///
+///pon el trago y te dice la cantidad de alchool
+const trago = prompt("ingrese su trago favorito por favor");
+switch (trago) {
+    case "Sidra":
+      console.log("2-8")
+      break
+    case "cerveza":
+        console.log("2.5-4")
+       break
+    case "Vino":
+        console.log("5.5-14")
+        break
+    case "Vodka":
+        console.log("20")
+        break
+    case "Caña":
+         console.log("34-54")
+         break    
+    case "Ron":
+         console.log("37-80")
+         break 
+    case "Tequila":
+        console.log("37-50")
+        break 
+    default:
+      console.log("el switch es de maricas, se tenia que decir y se dijo >:v")
+      break
+  }
+
+
+  //Pones el pais y te suelta la cantidad de mundiales de futbol que ha ganado
+  const campeon = prompt("ingrese el pais")
+
+  switch (campeon) {
+    case "Brazil":
+      console.log("5")
+      break
+    case "alemania":
+        console.log("4")
+        break
+    case "italia":
+            console.log("4")
+            break
+    case "argentina":
+      console.log("2")
+      break
+    case "francia":
+      console.log("2")
+      break
+    case "uruguay":
+      console.log("2")
+      break
+    case "españa":
+      console.log("1")
+      break
+    case "inglaterra":
+      console.log("1")
+      break
+    default:
+      console.log("No ha ganado nada, como tu con ella")
+      break;
+  }
+
+
+
+
