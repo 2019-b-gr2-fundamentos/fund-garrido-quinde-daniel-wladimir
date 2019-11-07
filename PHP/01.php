@@ -43,7 +43,8 @@ echo strpbrk($Nombre, "G")."\n";     //Notemos que pone busca la primera letra i
 
 echo strrchr($Nombre, "l")."\n";
 
-echo strstr($Nombre, "a");
+echo strstr($Nombre, "a")."\n";   //Estos 2 ultimos hacen lo mismo, buscan la letra e imprimen solo lo despues a eso
+
 
 
 
