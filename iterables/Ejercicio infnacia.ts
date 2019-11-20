@@ -1,7 +1,39 @@
 // 1)Crear un arreglo 5 elemntos
 const arreglo = [] // Inicialize el arrelgo 
-
 //   2) Caada elemnto de 1 o 0
+
+for(let arreglo = prompt("ingrese");arreglo > 0)
+
+
+
+
+
+
+
+
+
+
+
+
+// nEste bloque me dice si en el floron hay un solo elemnto
+
+let arreglofloroon = [0,0,1,0,0];
+let ecistefloron = false
+for(let i=0; i<5; i++){
+    if(arreglofloroon[i] == 1){
+        ecistefloron = true
+    }else{
+        ecistefloron = false
+    }
+}
+if (ecistefloron == true){
+    console.log("adivinar")
+}
+
+// A esto se lo llama la tecnica de la bandera --> flag 
+// la cual nos permite identificar si existe o no un elemnto
+
+
 //   Ej [0,0,1,1,0]
 //   Al menos un elemnto un "1" 
 //Funcion para saver elemntops de 1 y ceros 
@@ -18,9 +50,5 @@ compara la lingitud del arreglo y que sea la que quiero
 El cero significa no tengo el flooron
 */
 
-const arregloreal = []
-for(let arreglo = prompt("ingrese el numeri");){
-    Math.floor(Math.random() * 2)
-} 
 
-console.log(arregloreal)
+

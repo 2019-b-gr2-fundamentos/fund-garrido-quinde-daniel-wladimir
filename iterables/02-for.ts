@@ -5,7 +5,18 @@
  // 2) Condition (Expresion)
  // 3) Incrementar, Disminuir
 // Notemos que en la condion nop puedo usar ek "==" debo utilizar cosas como != o => o <
+//aHORA notemos que en el for va a leer el bloque de codigo tantas veces como impongamos con la conficion
  
+let bandera = 0;
+for(let i=0; i<10; i++){
+    bandera = bandera + i;
+    console.log(bandera);
+}
+
+/*Notemos que si imprimimos vandera nos va a solar 0+1+2+3+4+5+6+7+8+9 osea 49 
+Estod se debe a que consolo.log bandera al estar dentro del bloque de codigo me va reasignando la bandera,pero si le ponia afuera del bloque 
+del for se me imprime 9 
+*/
 
 
 for (let numeoroExMiCrush = 7; numeoroExMiCrush != 0; numeoroExMiCrush--){
@@ -60,12 +71,13 @@ puedo escribir la constante indiceElemntoCinco o el numero 4 que es el indice qu
 console.log(arregloNumeros[4]);
 
 
+/* ITERAR UN ARREGLO
+CONDICIONES DENTRO DEL FOR
+1. let tamaño = arregloNumeros.legth
+2. tamaño > 0
+3. tamaño --
+*/
+for(let tamaño = arregloNumeros.length - 1 ; tamaño >= 0; tamaño--){
+    console.log(arregloNumeros[tamaño])
+}
 
-
-/*for
-Acceder a cada elemento del arreglo, lo hacemos por el indice
- 1)let tamaño = arregloNumeros.lenght  //5
- 2) tamaño > 0
- 3) --
- */
-Math.floor(Math.random() * 2)
