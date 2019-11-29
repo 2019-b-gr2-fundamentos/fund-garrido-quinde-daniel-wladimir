@@ -1,5 +1,4 @@
-function log(
-    cualquierCosa // parametro
+function log(cualquierCosa // parametro
     ){
     console.log(cualquierCosa);
 }
