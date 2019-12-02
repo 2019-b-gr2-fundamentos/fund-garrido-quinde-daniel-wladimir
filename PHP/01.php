@@ -46,8 +46,10 @@ echo strrchr($Nombre, "l")."\n";
 echo strstr($Nombre, "a")."\n";   //Estos 2 ultimos hacen lo mismo, buscan la letra e imprimen solo lo despues a eso
 
 
-
-
+$final = array(2,5,4);
+$inicial = array(1,3,5);
+$multi = $final[0] * $inicial[2];
+echo $multi;
  ?>
 
 
