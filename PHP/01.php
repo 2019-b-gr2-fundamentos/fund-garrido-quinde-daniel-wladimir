@@ -50,6 +50,16 @@ $final = array(2,5,4);
 $inicial = array(1,3,5);
 $multi = $final[0] * $inicial[2];
 echo $multi;
+echo "\n"; 
+//Para declarar el array tenemos que utilizar la palabra a lado del parentesis
+
+
+$valor = 0;
+for ($i=0; $i < 3; $i++) { 
+	$ejec = $i + 2;
+	$valor = $valor + $ejec;
+}
+echo $valor;
  ?>
 
 
