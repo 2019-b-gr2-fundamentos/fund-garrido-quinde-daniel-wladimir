@@ -1,5 +1,5 @@
 <?php 
-/*
+
 function longitud ($a){
 	$y = count($a);
 	echo $y;
@@ -26,18 +26,15 @@ $t = array(1,2,4);
 sumalong($z,$t);
 
 
-*/
-function productoCruz($operacion,$numero1,$numero2,$numero3){
+function productoCruz($numero1,$numero2,$numero3){
 	function lala($numero1,$numero2){
-	$elemx = ($numero1[1]*$numero2[2])-($numero1[2]*$numero2[1]);
-	$elemy = -(($numero1[0]*$numero2[2])-($numero1[2]*$numero2[0]));
-	$elemz = ($numero1[0]*$numero2[1])-($numero1[1]*$numero2[0]);
-	return $vectorf = array($elemx,$elemy,$elemz);
+		$elemx = ($numero1[1]*$numero2[2])-($numero1[2]*$numero2[1]);
+		$elemy = -(($numero1[0]*$numero2[2])-($numero1[2]*$numero2[0]));
+		$elemz = ($numero1[0]*$numero2[1])-($numero1[1]*$numero2[0]);
+		return $vectorf = array($elemx,$elemy,$elemz);
 	}
 	$a = lala($numero1,$numero2);
 	$b = lala($a,$numero3);
-	echo $operacion;
-	echo "\n";
 	print_r($b);
 	
 }
@@ -51,6 +48,14 @@ productoCruz(3,$a,$b,$c);
 
 
 
+function sumavectorialdoble ($a,$b){
+	$longitud = count($a);
+	$p = array();
+	for ($l=0; $l < $longitud; $l++) { 
+	$p[$l] = $a[$l] + $b[$l];
+	}
+	return $p;
+}
 
-
-
+$xz = sumavectorialdoble($a,$b);
+print_r($xz);

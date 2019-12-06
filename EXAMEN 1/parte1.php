@@ -22,9 +22,11 @@ function calculadora ($operacion, $numero1, $numero2, $numero3) {
 					$elemz = ($numero1[0]*$numero2[1])-($numero1[1]*$numero2[0]);
 					return $vectorf = array($elemx,$elemy,$elemz);
 					}
-			$a = lala($numero1,$numero2);
-			$b = lala($a,$numero3);
-			print_r($b);				
+			if (count($numero1) == count($numero2) && count($numero1) == count($numero3) && count($numero1) == 3) {
+							$a = lala($numero1,$numero2);
+							$b = lala($a,$numero3);
+							print_r($b);
+				}else{echo ">;v";}				
 		}elseif($operacion == 6 || $operacion == "producto punto" || $operacion == "producto punto-6"){
 			if ($numero3 == 0){
 				$valor = 0;
@@ -68,10 +70,29 @@ function calculadora ($operacion, $numero1, $numero2, $numero3) {
 				}else {echo  "el valor absoluto de $vectorlala[$i] es $vectorlala[$i]";
 						echo "\n";}
 			}
+		}elseif($operacion == 10 || $operacion == "suma vectorial" || $operacion == "suma vectorial-10"){
+			$long1 = count($numero1);
+			$long2 = count($numero2);
+			$long3 = count($numero3);
+			function sumavectorialdoble ($a,$b){
+				$longitud = count($a);
+				$p = array();
+				for ($l=0; $l < $longitud; $l++) { 
+					$p[$l] = $a[$l] + $b[$l];
+				}
+				return $p;
+			}
+			if ($long1==$long2 && $long2==$long3){
+				$resultado = array();
+				for ($i=0; $i < $long3; $i++){ 
+					$resultado[$i] = $numero1[$i] + $numero2[$i] + $numero3[$i]; 
+				}
+				print_r($resultado);
+			}else {echo"esto no se puede sumar :v";}			
 		}
 }
 	
-calculadora (9,0,-7,-4);
+calculadora (10,array(3,2,5,4),array(8,59,5,3),array(8,5,5,1));
 
  
  ?>
