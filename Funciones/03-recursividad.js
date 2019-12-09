@@ -61,35 +61,29 @@ function imprimirMensajeNveces (
 
 /
 
-
+*/
 ////
-
-function imprimirMensajeNveces(
-    mensaje: string,
-    numeroVeces: number
-): void{  //Se pone void si no se devuelve nada
-    if(numeroVeces == 0){
+function imprimirMensajeNveces(mensaje, numeroVeces) {
+    if (numeroVeces == 0) {
         console.log("se termino");
-    }else{
+    }
+    else {
         console.log(mensaje);
-        const nuevonumeroVeces = numeroVeces - 1;
+        var nuevonumeroVeces = numeroVeces - 1;
         imprimirMensajeNveces(mensaje, nuevonumeroVeces);
     }
 }
-
-function main(){
-    imprimirMensajeNveces(`me aburro`,5);
-}
-main();
-*/
+imprimirMensajeNveces('me aburro', 5);
 //Pasos para recorrere el arreglo
 //Le mandas el arreglo
 //IMPRIME EL PRIMER ELEMENTO DEL ARREGLO
 // DISMINUYE EN UNO EL TAMÑO DEL INDICE
 //IMPRIME EL SIGUIENTE ARREGLO
-/* para tipar
+/*
+para tipar
 arregloString: string[]
 arregloBoolean: boolean[]
+
 */
 function recorrerArreglo(arregloNumeros, tamaño) {
     if (tamaño == 0) {
@@ -105,3 +99,14 @@ function main() {
     recorrerArreglo([1, 2, 3, 4, 5, 78, 7], 7);
 }
 main();
+//Seguinda forma
+/*
+function recorrerArreglo2(
+    arregloNumeros: number[]
+):void{
+    if()
+}else{
+    console.log
+}
+/*
+*/

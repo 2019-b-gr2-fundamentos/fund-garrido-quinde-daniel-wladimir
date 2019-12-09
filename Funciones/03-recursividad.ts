@@ -61,7 +61,7 @@ function imprimirMensajeNveces (
 
 /
 
-
+*/
 ////
 
 function imprimirMensajeNveces(
@@ -77,22 +77,20 @@ function imprimirMensajeNveces(
     }
 }
 
-function main(){
-    imprimirMensajeNveces(`me aburro`,5);
-}
-main();
-*/
+imprimirMensajeNveces('me aburro',5);
+
 
 //Pasos para recorrere el arreglo
 //Le mandas el arreglo
 //IMPRIME EL PRIMER ELEMENTO DEL ARREGLO
 // DISMINUYE EN UNO EL TAMÑO DEL INDICE
 //IMPRIME EL SIGUIENTE ARREGLO
-/* para tipar 
+/*
+para tipar 
 arregloString: string[]
 arregloBoolean: boolean[]
-*/
 
+*/
 
 function recorrerArreglo(
     arregloNumeros: number[],
@@ -112,7 +110,7 @@ function main (){
 main();
 
 //Seguinda forma
-
+/*
 function recorrerArreglo2(
     arregloNumeros: number[]
 ):void{
@@ -120,7 +118,8 @@ function recorrerArreglo2(
 }else{
     console.log
 }
-
+/*
+*/
 
 
 
