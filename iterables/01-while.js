@@ -50,7 +50,7 @@ Si es inpar aumentar a analisis socioeconomico
 si es par aumentamos a algebra
 si es multiplo de 3 aumentamos a compiladores
 */
-var numero = 1;
+var numero = 0;
 var Analisis = 0;
 var Algebra = 0;
 var Compiladores = 0;
@@ -89,4 +89,4 @@ do {
         }
     }
 } while (numero == 1000);
-console.log("la cantida de deberes de ingles fue " + fisica);
+console.log("la cantida de deberes de ingles fue " + numero);
