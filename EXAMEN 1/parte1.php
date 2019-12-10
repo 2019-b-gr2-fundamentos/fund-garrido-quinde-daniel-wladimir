@@ -92,7 +92,7 @@ function calculadora ($operacion, $numero1, $numero2, $numero3) {
 		}
 }
 	
-calculadora (6,array(2,1,2),array(2,6,8),0);
+calculadora (10,array(1,2,3),array(8,5,6),array(5,5,5));
 
  
  ?>

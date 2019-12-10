@@ -81,3 +81,18 @@ for(let tamaño = arregloNumeros.length - 1 ; tamaño >= 0; tamaño--){
     console.log(arregloNumeros[tamaño])
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

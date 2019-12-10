@@ -6,7 +6,17 @@ crear,actualizar,eliminar,salir1
 3) funcion para realizar un pop a un elemnto especifico en el arreglo
 4) 
 */
-$a = array(1,2,3,4,5,6,7,8);
+$a = array("juego_tronos","choque_reyes","tormenta_espadas","festin_cuervos","danza_dragones","fuego_sangre");
+$b = 'tormenta_espadas';
+$m = "choqueeeee";
+$n = "los3cerditos";
+
+function agregar($arre, $da){
+	$f = $arre;
+    $f[] = $da;
+	return $f;
+}
+
 function modificar($arreglo,$datoBase,$datoNew){
 	$longitud = count($arreglo);
 	$arreglofinal = array(0,1);
@@ -17,20 +27,26 @@ function modificar($arreglo,$datoBase,$datoNew){
 			$arreglofinal[$i] = $arreglo[$i];
 		}
 	}
-	print_r($arreglofinal);
-
-} 
-
-function crear($arreglo,$dato){
-	$arreglofinal = array_push($arreglo, $dato);
-	//return $arreglofinal;
-	print_r($arreglofinal);
+	return $arreglofinal;
 } 
 
 
-modificar($a,2,7)
-//crear($a,2)
-//print_r($hola);
+function eliminar ($arreglo,$libro){
+	$t= $arreglo;
+	$indice = array_search($libro, $t);
+	unset($t[$indice]);
+	return $t;
+}
+
+
+$h = agregar($a,$n);
+$k = modificar($a,$b,$m);
+$f =eliminar($a,$b);
+
+print_r($h);
+print_r($k);
+print_r($f);
+
 
 
 

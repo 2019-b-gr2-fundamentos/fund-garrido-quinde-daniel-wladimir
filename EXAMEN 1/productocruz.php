@@ -1,5 +1,5 @@
 <?php 
-
+/*
 function longitud ($a){
 	$y = count($a);
 	echo $y;
@@ -59,3 +59,11 @@ function sumavectorialdoble ($a,$b){
 
 $xz = sumavectorialdoble($a,$b);
 print_r($xz);
+*/
+
+$q = array(1,5,2,6,7);
+$t = $q[2];
+$l = $q[3];
+$q[3] = $t; 
+$q[3-1] =$l;
+print_r($q);
