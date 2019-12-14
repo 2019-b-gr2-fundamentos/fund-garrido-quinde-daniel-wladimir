@@ -39,15 +39,12 @@ function eliminar ($arreglo,$libro){
 }
 
 
-$h = agregar($a,$n);
+$rr = agregar($a,"detergente");
 $k = modificar($a,$b,$m);
 $f =eliminar($a,$b);
 
-print_r($h);
-print_r($k);
-print_r($f);
 
-
+print_r($rr);
 
 
 ?>
