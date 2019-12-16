@@ -5,9 +5,98 @@
 */
 //1
 
+function verificarTodosloselementosdeunarregloesArreglo(
+    arreglo: any[]
+):boolean{
+    for(let j = 0; j<arreglo.length; j++){
+        const elemnt = arreglo[j];
+        const esunarreglo = typeof elemnt == `object` && elemnt.indexOf; //el index off es un truty, nos dice si el indice existe
+        // si se ponde un signo de ! estamos negando la condicion, se leeria "si no es un arreglo hacer.."
+        if(!esunarreglo){
+            console.log("no es un arreglo");
+            return false;
+        }
+
+    }
+}
+
+
 const a = [[2,1],[3,1],[8,2]]
 
 const b = [[2,1],[3,1],[8,0]]
+
+function obtenerprimeradimension(
+    matriz1 : Number [][]
+):number{
+    const esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
+    if(esValido){
+        const primeradimensio = matriz1.length
+        return primeradimensio;
+    }
+    return matriz1.length;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function obtenersegundadimension(matriz1:number[][]){
+    const esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
+    //de aqui
+    let longitudActualMAxiuma = 0; // variable auxiliar
+    let longitudActualMin = -1 
+    for(let o = 0; o <matriz1.length; o++){
+        const elemnt = matriz1[o];//arreglo
+        const longactual = elemnt.length//segunda dimension
+        if(longitudActualMAxiuma<longactual){
+            longitudActualMAxiuma = longactual;
+        }
+    }
+    // a aca sacamos el maximo
+    for(let o = 0; o <matriz1.length; o++){
+        const elemnt = matriz1[o];//arreglo
+        const longactual = elemnt.length//segunda dimension
+        if(longitudActualMin>longactual && longitudActualMin >= 0 ){
+            longitudActualMin = longactual;
+        }else{
+            longitudActualMin = longactual;
+        }
+    }
+}
+
+obtenersegundadimension(b);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function igualdad(
     matriz1 : number [][],
@@ -38,7 +127,7 @@ function igualdad(
     }
 }
 
-igualdad(a,b);
+
 
 
 function suma(matriz3 : number[][]){
@@ -62,8 +151,6 @@ function suma(matriz3 : number[][]){
     console.log(`la suma de la fila ${p + 1} es ${valorf3}`)
     }
 }
-
-suma(a);
 
 
 
