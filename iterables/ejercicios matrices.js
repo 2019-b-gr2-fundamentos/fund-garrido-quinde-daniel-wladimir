@@ -96,6 +96,15 @@ function main() {
     ];
     compararMatriz(x, y);
 }
+main();
+/* Debaugers herramient apara ayudar a encontrar los errores en el putanal de codigo
+fecha 18/12 hay dos informes, en el primero tienes que hacer la funcion
+obtenerPrimeraDimension
+obtenerSegundaDimension
+verificarTodosLosElementosDeUnArregloSonArreglo
+
+En el segundo vamos a ver los debugers
+*/
 function igualdad(matriz1, matriz2) {
     var long1 = matriz1.length;
     var long2 = matriz2.length;

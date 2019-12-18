@@ -122,7 +122,7 @@ function main(){
 
 
 
-
+main();
 
 
 
@@ -141,6 +141,11 @@ obtenerSegundaDimension
 verificarTodosLosElementosDeUnArregloSonArreglo
 
 En el segundo vamos a ver los debugers
+Los puntos de quiebe son los puntos rojos que podmeos poner a la izquierda del numero de linea,
+esotos puntos le dicen al debugeador
+
+
+BUSCAR EL DEBUGER PARA PHP
 */
 
 
