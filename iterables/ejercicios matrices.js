@@ -1,49 +1,101 @@
 /*
-1) verificar que dos matrices sean iguales
-2) sumar las columnas y las filas de una matriz
-3) intercambiar las diagonales
+Obtener la primera dimension y la segunda dimension , ademas ver que todos los arreglos
+dentro del arregllo son iguales
+
+
 */
-//1
-function verificarTodosloselementosdeunarregloesArreglo(arreglo) {
-    for (var j = 0; j < arreglo.length; j++) {
-        var elemnt = arreglo[j];
-        var esunarreglo = typeof elemnt == "object" && elemnt.indexOf; //el index off es un truty, nos dice si el indice existe
-        // si se ponde un signo de ! estamos negando la condicion, se leeria "si no es un arreglo hacer.."
-        if (!esunarreglo) {
-            console.log("no es un arreglo");
+var arregloMatriz = [
+    [1, 2],
+    [3, 4, 5],
+    [6, 7, 8, 6],
+    [9],
+    [],
+];
+function compararMatriz(matrizUno, matrizDos) {
+    var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
+    var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
+    var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
+    var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
+    console.log(matrizUnoPrimeraDimension);
+    console.log(matrizUnoSegundaDimension);
+    console.log(matrizDosPrimeraDimension);
+    console.log(matrizDosSegundaDimension);
+    return true;
+}
+function obtenerPrimeraDimension(matrizUno) {
+    // VALIDACIONES
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if (esValido) {
+        var primeraDimensionArreglo = matrizUno.length;
+        return primeraDimensionArreglo;
+    }
+    else {
+        return false;
+    }
+}
+function obtenerSegundaDimension(matrizUno) {
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if (esValido == true) {
+        var longitudActualMaxima = 0; // Auxiliar
+        var longitudActualMinima = -1; // Auxiliar
+        for (var i = 0; i < matrizUno.length; i++) {
+            var elementoActual = matrizUno[i]; // arreglo
+            var longitudActual = elementoActual.length; // segunda dimension
+            if (longitudActualMaxima < longitudActual) {
+                longitudActualMaxima = longitudActual;
+            }
+            if (longitudActualMinima == -1) {
+                longitudActualMinima = longitudActual;
+            }
+            else {
+                if (longitudActual < longitudActualMinima) {
+                    longitudActualMinima = longitudActual;
+                }
+            }
+        }
+        if (longitudActualMaxima != longitudActualMinima) {
+            return false;
+        }
+        else {
+            return matrizUno[0].length;
+        }
+    }
+    else {
+        return false;
+    }
+}
+function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
+    for (var i = 0; i < arreglo.length; i++) {
+        var elementoActual = arreglo[i];
+        var esUnArreglo = typeof elementoActual == 'object' &&
+            elementoActual.indexOf; // Truty
+        if (!esUnArreglo) {
             return false;
         }
     }
+    return true;
 }
-var a = [[2, 1], [3, 1], [8, 2]];
-var b = [[2, 1], [3, 1], [8, 0]];
-function obtenerprimeradimension(matriz1) {
-    var esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
-    if (esValido) {
-        var primeradimensio = matriz1.length;
-        return primeradimensio;
-    }
-    return matriz1.length;
+var matriz1 = [
+    [1, 3],
+    [2, 3],
+    [1]
+];
+var matriz2 = [
+    [1, 2],
+    [1, 2],
+    [1, 2]
+];
+function main() {
+    var x = [
+        [1, 2],
+        [3]
+    ];
+    var y = [
+        [1, 2],
+        [3, 4],
+    ];
+    compararMatriz(x, y);
 }
-function obtenersegundadimension(matriz1) {
-    var esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
-    var x = 0;
-    for (var i = 0; i < matriz1.length; i++) {
-        var g = matriz1[i + 1].length;
-        if (matriz1[i].length == g) {
-            x = x + 1;
-        }
-        else {
-            console.log("nel perro");
-            break;
-        }
-    }
-    if (matriz1.length == x) {
-        var elemntac = matriz1[0].length;
-        console.log(elemntac);
-    }
-}
-obtenersegundadimension(b);
 function igualdad(matriz1, matriz2) {
     var long1 = matriz1.length;
     var long2 = matriz2.length;

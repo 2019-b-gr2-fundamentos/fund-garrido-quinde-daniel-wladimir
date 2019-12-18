@@ -1,77 +1,124 @@
 /*
-1) verificar que dos matrices sean iguales
-2) sumar las columnas y las filas de una matriz
-3) intercambiar las diagonales 
-*/
-//1
+Obtener la primera dimension y la segunda dimension , ademas ver que todos los arreglos 
+dentro del arregllo son iguales
 
-function verificarTodosloselementosdeunarregloesArreglo(
+
+*/
+
+
+
+const arregloMatriz = [
+    [1,2],
+    [3,4,5],
+    [6,7,8,6],
+    [9],
+    [],
+];
+
+
+
+function compararMatriz(
+    matrizUno: number[][],
+    matrizDos: number[][]
+): boolean {
+    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+        matrizUno
+        );
+    const matrizUnoSegundaDimension = obtenerSegundaDimension(
+        matrizUno
+        );
+    const matrizDosPrimeraDimension = obtenerPrimeraDimension(
+        matrizDos
+        );
+    const matrizDosSegundaDimension = obtenerSegundaDimension(
+        matrizDos
+        );
+    console.log(matrizUnoPrimeraDimension);
+    console.log(matrizUnoSegundaDimension);
+    console.log(matrizDosPrimeraDimension);
+    console.log(matrizDosSegundaDimension);
+    
+ return true;
+}
+
+function obtenerPrimeraDimension(matrizUno: number[][]): number | boolean{
+    // VALIDACIONES
+    const esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if(esValido){
+        const primeraDimensionArreglo = matrizUno.length;
+        return primeraDimensionArreglo;
+    }else{
+        return false;
+    }
+}
+
+function obtenerSegundaDimension(matrizUno: number[][]): number | boolean{
+    const esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if(esValido==true){
+        let longitudActualMaxima = 0; // Auxiliar
+        let longitudActualMinima = -1; // Auxiliar
+        for(let i = 0; i < matrizUno.length; i++){
+            const elementoActual = matrizUno[i]; // arreglo
+            const longitudActual = elementoActual.length; // segunda dimension
+            if(longitudActualMaxima < longitudActual){
+                longitudActualMaxima = longitudActual;
+            }
+            if(longitudActualMinima == -1) {
+                longitudActualMinima = longitudActual;
+            }else{
+                if(longitudActual < longitudActualMinima){
+                    longitudActualMinima = longitudActual;
+                }
+            }
+        }
+        if(longitudActualMaxima != longitudActualMinima){
+            return false;
+        }else{
+            return matrizUno[0].length;
+        }
+    }else{
+        return false;
+    }
+}
+
+function verificarTodosLosElementosDeUnArregloSonArreglo(
     arreglo: any[]
 ):boolean{
-    for(let j = 0; j<arreglo.length; j++){
-        const elemnt = arreglo[j];
-        const esunarreglo = typeof elemnt == `object` && elemnt.indexOf; //el index off es un truty, nos dice si el indice existe
-        // si se ponde un signo de ! estamos negando la condicion, se leeria "si no es un arreglo hacer.."
-        if(!esunarreglo){
-            console.log("no es un arreglo");
+    for(let i = 0; i < arreglo.length; i++){
+        const elementoActual = arreglo[i];
+        const esUnArreglo = typeof elementoActual == 'object' &&
+        elementoActual.indexOf; // Truty
+        if(!esUnArreglo){
             return false;
         }
-
     }
+    return true;
 }
 
 
-const a = [[2,1],[3,1],[8,2]]
+    const matriz1 = [
+        [1,3],
+        [2,3],
+        [1]
+    ]
+    const matriz2 = [
+        [1,2],
+        [1,2],
+        [1,2]
+    ]
 
-const b = [[2,1],[3,1],[8,0]]
 
-function obtenerprimeradimension(
-    matriz1 : Number [][]
-):number{
-    const esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
-    if(esValido){
-        const primeradimensio = matriz1.length
-        return primeradimensio;
+function main(){
+        const x = [
+            [1,2],
+            [3]
+        ];
+        const y = [
+            [1,2],
+            [3,4],
+        ];
+        compararMatriz(x, y);
     }
-    return matriz1.length;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-function obtenersegundadimension(matriz1:number[][]){
-    const esValido = verificarTodosloselementosdeunarregloesArreglo(matriz1);
-    //de aqui
-    let longitudActualMAxiuma = 0; // variable auxiliar
-    let longitudActualMin = -1 
-    for(let o = 0; o <matriz1.length; o++){
-        const elemnt = matriz1[o];//arreglo
-        const longactual = elemnt.length//segunda dimension
-        if(longitudActualMAxiuma<longactual){
-            longitudActualMAxiuma = longactual;
-        }
-    }
-    // a aca sacamos el maximo
-    for(let o = 0; o <matriz1.length; o++){
-        const elemnt = matriz1[o];//arreglo
-        const longactual = elemnt.length//segunda dimension
-        if(longitudActualMin>longactual && longitudActualMin >= 0 ){
-            longitudActualMin = longactual;
-        }else{
-            longitudActualMin = longactual;
-        }
-    }
-}
-
-obtenersegundadimension(b);
 
 
 
@@ -87,10 +134,14 @@ obtenersegundadimension(b);
 
 
 
+/* Debaugers herramient apara ayudar a encontrar los errores en el putanal de codigo
+fecha 18/12 hay dos informes, en el primero tienes que hacer la funcion 
+obtenerPrimeraDimension
+obtenerSegundaDimension
+verificarTodosLosElementosDeUnArregloSonArreglo
 
-
-
-
+En el segundo vamos a ver los debugers
+*/
 
 
 
