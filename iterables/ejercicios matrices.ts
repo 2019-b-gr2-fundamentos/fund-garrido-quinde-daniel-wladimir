@@ -5,22 +5,24 @@ dentro del arregllo son iguales
 
 */
 
-
-
-const arregloMatriz = [
-    [1,2],
-    [3,4,5],
-    [6,7,8,6],
-    [9],
-    [],
-];
-
-
-
 function compararMatriz(
     matrizUno: number[][],
     matrizDos: number[][]
-): boolean {
+): boolean{
+   const eFectivamente = TienenMAtricesIGualDIm(
+       matrizUno,matrizDos
+   );
+    if (eFectivamente){
+        return true;
+    }else {
+        return false;
+        }
+}
+
+function TienenMAtricesIGualDIm (
+    matrizUno : number[][],
+    matrizDos :number [][]
+):boolean {
     const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
         matrizUno
         );
@@ -33,13 +35,22 @@ function compararMatriz(
     const matrizDosSegundaDimension = obtenerSegundaDimension(
         matrizDos
         );
-    console.log(matrizUnoPrimeraDimension);
-    console.log(matrizUnoSegundaDimension);
-    console.log(matrizDosPrimeraDimension);
-    console.log(matrizDosSegundaDimension);
-    
- return true;
+    const noHayfalsos = matrizUnoPrimeraDimension != false && matrizUnoSegundaDimension != false && matrizDosSegundaDimension != false &&
+    matrizDosPrimeraDimension != false;
+
+    const sonMismaDim = matrizDosPrimeraDimension == matrizUnoPrimeraDimension && matrizDosSegundaDimension == matrizUnoSegundaDimension;
+
+    if(noHayfalsos){
+            if(sonMismaDim){
+                return true;
+            }else{            
+                return false
+            }
+        }else{
+            return false;
+        }
 }
+
 
 function obtenerPrimeraDimension(matrizUno: number[][]): number | boolean{
     // VALIDACIONES
@@ -96,31 +107,24 @@ function verificarTodosLosElementosDeUnArregloSonArreglo(
 }
 
 
-    const matriz1 = [
-        [1,3],
-        [2,3],
-        [1]
-    ]
-    const matriz2 = [
-        [1,2],
-        [1,2],
-        [1,2]
-    ]
-
-
 function main(){
         const x = [
-            [1,2],
-            [3]
+            [1,2,1],
+            [3,2,0],
+            [3,1,0]
         ];
         const y = [
-            [1,2],
-            [3,4],
+            [1,2,1],
+            [3,2,0],
+            [3,2,2]
         ];
-        compararMatriz(x, y);
+       const hi =  compararMatriz(x, y);
+       igualdad(x,y)
+        console.log('pues:',hi);
+        const ki =  verCuadradas(x, y);
+        console.log('putos:',ki);
+
     }
-
-
 
 main();
 
@@ -158,20 +162,21 @@ function igualdad(
     matriz1 : number [][],
     matriz2 : number [][] 
 ){
-    const long1 = matriz1.length
-    const long2 = matriz2.length
-    const long1_2 = matriz1[0].length
-    const long2_2 = matriz2[0].length
-    const valor3 = long1 * long1_2 
-    let valor = 0
-    if(long1 == long2 && long1_2 == long2_2){
-        for(let i = 0; i< long1; i++){
-            for(let j = 0; j<long1_2; j++){
-                if(matriz1[i][j]==matriz2[i][j]){
-                    valor = valor + 1
+const doble = compararMatriz(matriz1,matriz2);
+    if(doble == true){
+            const long1 = matriz1.length
+            const long2 = matriz2.length
+            const long1_2 = matriz1[0].length
+            const long2_2 = matriz2[0].length
+            const valor3 = long1 * long1_2 
+            let valor = 0
+            if(long1 == long2 && long1_2 == long2_2){
+                    for(let i = 0; i< long1; i++){
+                        for(let j = 0; j<long1_2; j++){
+                            if(matriz1[i][j]==matriz2[i][j]){
+                                    valor = valor + 1
                 }else{
                     console.log(`${matriz1[i][j]} no es igual a ${matriz2[i][j]}`)
-                    
                 }
             }
         }
@@ -181,6 +186,9 @@ function igualdad(
     }else{
         console.log("hablas piedras ni cagando son iguales")
     }
+}else{
+    console.log("hablas piedras ni cagando son iguales")
+}
 }
 
 
@@ -208,7 +216,48 @@ function suma(matriz3 : number[][]){
     }
 }
 
+function verCuadradas(
+    matrizUno:number[][],
+    matrizDos:number[][]
+):boolean{
+    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+        matrizUno
+        );
+    const matrizUnoSegundaDimension = obtenerSegundaDimension(
+        matrizUno
+        );
+    const matrizDosPrimeraDimension = obtenerPrimeraDimension(
+        matrizDos
+        );
+    const matrizDosSegundaDimension = obtenerSegundaDimension(
+        matrizDos
+        );  
+    if(matrizUnoPrimeraDimension == matrizUnoSegundaDimension == matrizDosPrimeraDimension == matrizDosSegundaDimension){return true}else{return false}
+}
 
+
+
+/*
+function cmabiarDiagonal (
+    matrizUno : number [][],
+    matrizDos : number [][]
+){
+    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+        matrizUno
+        );
+    const xxx = verCuadradas(matrizUno,matrizDos)    
+    if(verCuadradas){
+        for(let k=0; k < matrizUnoPrimeraDimension ; k++){
+            let valor1 = matrizUno[k][k];
+            let valor2 = matrizDos[k][k];
+            matrizUno[k][k] = valor1;
+            matrizDos[k][k] = valor2;
+        }
+    }else{console.log("no se puede xd")} 
+}
+
+
+*/
 
 
 

@@ -4,23 +4,34 @@ dentro del arregllo son iguales
 
 
 */
-var arregloMatriz = [
-    [1, 2],
-    [3, 4, 5],
-    [6, 7, 8, 6],
-    [9],
-    [],
-];
 function compararMatriz(matrizUno, matrizDos) {
+    var eFectivamente = TienenMAtricesIGualDIm(matrizUno, matrizDos);
+    if (eFectivamente) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function TienenMAtricesIGualDIm(matrizUno, matrizDos) {
     var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
     var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
     var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
-    console.log(matrizUnoPrimeraDimension);
-    console.log(matrizUnoSegundaDimension);
-    console.log(matrizDosPrimeraDimension);
-    console.log(matrizDosSegundaDimension);
-    return true;
+    var noHayfalsos = matrizUnoPrimeraDimension != false && matrizUnoSegundaDimension != false && matrizDosSegundaDimension != false &&
+        matrizDosPrimeraDimension != false;
+    var sonMismaDim = matrizDosPrimeraDimension == matrizUnoPrimeraDimension && matrizDosSegundaDimension == matrizUnoSegundaDimension;
+    if (noHayfalsos) {
+        if (sonMismaDim) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
 }
 function obtenerPrimeraDimension(matrizUno) {
     // VALIDACIONES
@@ -75,26 +86,22 @@ function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
     }
     return true;
 }
-var matriz1 = [
-    [1, 3],
-    [2, 3],
-    [1]
-];
-var matriz2 = [
-    [1, 2],
-    [1, 2],
-    [1, 2]
-];
 function main() {
     var x = [
-        [1, 2],
-        [3]
+        [1, 2, 1],
+        [3, 2, 0],
+        [3, 1, 0]
     ];
     var y = [
-        [1, 2],
-        [3, 4],
+        [1, 2, 1],
+        [3, 2, 0],
+        [3, 2, 2]
     ];
-    compararMatriz(x, y);
+    var hi = compararMatriz(x, y);
+    igualdad(x, y);
+    console.log('pues:', hi);
+    var ki = verCuadradas(x, y);
+    console.log('putos:', ki);
 }
 main();
 /* Debaugers herramient apara ayudar a encontrar los errores en el putanal de codigo
@@ -104,27 +111,38 @@ obtenerSegundaDimension
 verificarTodosLosElementosDeUnArregloSonArreglo
 
 En el segundo vamos a ver los debugers
+Los puntos de quiebe son los puntos rojos que podmeos poner a la izquierda del numero de linea,
+esotos puntos le dicen al debugeador
+
+
+BUSCAR EL DEBUGER PARA PHP
 */
 function igualdad(matriz1, matriz2) {
-    var long1 = matriz1.length;
-    var long2 = matriz2.length;
-    var long1_2 = matriz1[0].length;
-    var long2_2 = matriz2[0].length;
-    var valor3 = long1 * long1_2;
-    var valor = 0;
-    if (long1 == long2 && long1_2 == long2_2) {
-        for (var i = 0; i < long1; i++) {
-            for (var j = 0; j < long1_2; j++) {
-                if (matriz1[i][j] == matriz2[i][j]) {
-                    valor = valor + 1;
-                }
-                else {
-                    console.log(matriz1[i][j] + " no es igual a " + matriz2[i][j]);
+    var doble = compararMatriz(matriz1, matriz2);
+    if (doble == true) {
+        var long1 = matriz1.length;
+        var long2 = matriz2.length;
+        var long1_2 = matriz1[0].length;
+        var long2_2 = matriz2[0].length;
+        var valor3 = long1 * long1_2;
+        var valor = 0;
+        if (long1 == long2 && long1_2 == long2_2) {
+            for (var i = 0; i < long1; i++) {
+                for (var j = 0; j < long1_2; j++) {
+                    if (matriz1[i][j] == matriz2[i][j]) {
+                        valor = valor + 1;
+                    }
+                    else {
+                        console.log(matriz1[i][j] + " no es igual a " + matriz2[i][j]);
+                    }
                 }
             }
+            if (valor == valor3) {
+                console.log("efectivamente son iguales");
+            }
         }
-        if (valor == valor3) {
-            console.log("efectivamente son iguales");
+        else {
+            console.log("hablas piedras ni cagando son iguales");
         }
     }
     else {
@@ -151,3 +169,36 @@ function suma(matriz3) {
         console.log("la suma de la fila " + (p + 1) + " es " + valorf3);
     }
 }
+function verCuadradas(matrizUno, matrizDos) {
+    var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
+    var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
+    var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
+    var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
+    if (matrizUnoPrimeraDimension == matrizUnoSegundaDimension == matrizDosPrimeraDimension == matrizDosSegundaDimension) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+/*
+function cmabiarDiagonal (
+    matrizUno : number [][],
+    matrizDos : number [][]
+){
+    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+        matrizUno
+        );
+    const xxx = verCuadradas(matrizUno,matrizDos)
+    if(verCuadradas){
+        for(let k=0; k < matrizUnoPrimeraDimension ; k++){
+            let valor1 = matrizUno[k][k];
+            let valor2 = matrizDos[k][k];
+            matrizUno[k][k] = valor1;
+            matrizDos[k][k] = valor2;
+        }
+    }else{console.log("no se puede xd")}
+}
+
+
+*/
