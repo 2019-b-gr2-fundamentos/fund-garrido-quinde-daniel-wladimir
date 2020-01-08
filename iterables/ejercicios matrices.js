@@ -95,13 +95,9 @@ function main() {
     var y = [
         [1, 2, 1],
         [3, 2, 0],
-        [3, 2, 2]
+        [3, 1, 0]
     ];
-    var hi = compararMatriz(x, y);
-    igualdad(x, y);
-    console.log('pues:', hi);
-    var ki = verCuadradas(x, y);
-    console.log('putos:', ki);
+    console.log(x);
 }
 main();
 /* Debaugers herramient apara ayudar a encontrar los errores en el putanal de codigo
@@ -174,31 +170,31 @@ function verCuadradas(matrizUno, matrizDos) {
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
     var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
     var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
-    if (matrizUnoPrimeraDimension == matrizUnoSegundaDimension == matrizDosPrimeraDimension == matrizDosSegundaDimension) {
+    if (matrizUnoPrimeraDimension == matrizUnoSegundaDimension && matrizDosPrimeraDimension == matrizDosSegundaDimension && matrizDosPrimeraDimension == matrizUnoPrimeraDimension) {
         return true;
     }
     else {
         return false;
     }
 }
-/*
-function cmabiarDiagonal (
-    matrizUno : number [][],
-    matrizDos : number [][]
-){
-    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
-        matrizUno
-        );
-    const xxx = verCuadradas(matrizUno,matrizDos)
-    if(verCuadradas){
-        for(let k=0; k < matrizUnoPrimeraDimension ; k++){
-            let valor1 = matrizUno[k][k];
-            let valor2 = matrizDos[k][k];
-            matrizUno[k][k] = valor1;
-            matrizDos[k][k] = valor2;
+function cmabiarDiagonal(matrizUno, matrizDos) {
+    var long = matrizUno.length;
+    var verCond = verCuadradas(matrizUno, matrizDos);
+    var matrizUnoNueva = [];
+    var matrizDosNueva = [];
+    if (verCond == true) {
+        for (var k = 0; k < long; k++) {
+            for (var j = 0; j < long; j++) {
+                if (k == j) {
+                    var valor1 = matrizUno[k][k];
+                    var valor2 = matrizDos[k][k];
+                }
+                else {
+                }
+            }
         }
-    }else{console.log("no se puede xd")}
+    }
+    else {
+        console.log("no existe como hacer el cambio");
+    }
 }
-
-
-*/

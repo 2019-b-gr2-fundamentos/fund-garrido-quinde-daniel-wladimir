@@ -116,14 +116,9 @@ function main(){
         const y = [
             [1,2,1],
             [3,2,0],
-            [3,2,2]
+            [3,1,0]
         ];
-       const hi =  compararMatriz(x, y);
-       igualdad(x,y)
-        console.log('pues:',hi);
-        const ki =  verCuadradas(x, y);
-        console.log('putos:',ki);
-
+       console.log(x);
     }
 
 main();
@@ -232,32 +227,39 @@ function verCuadradas(
     const matrizDosSegundaDimension = obtenerSegundaDimension(
         matrizDos
         );  
-    if(matrizUnoPrimeraDimension == matrizUnoSegundaDimension == matrizDosPrimeraDimension == matrizDosSegundaDimension){return true}else{return false}
+    if(matrizUnoPrimeraDimension == matrizUnoSegundaDimension && matrizDosPrimeraDimension == matrizDosSegundaDimension && matrizDosPrimeraDimension == matrizUnoPrimeraDimension){
+        return true
+    }else{
+        return false}
 }
 
 
 
-/*
+
 function cmabiarDiagonal (
     matrizUno : number [][],
     matrizDos : number [][]
 ){
-    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
-        matrizUno
-        );
-    const xxx = verCuadradas(matrizUno,matrizDos)    
-    if(verCuadradas){
-        for(let k=0; k < matrizUnoPrimeraDimension ; k++){
-            let valor1 = matrizUno[k][k];
-            let valor2 = matrizDos[k][k];
-            matrizUno[k][k] = valor1;
-            matrizDos[k][k] = valor2;
+    const long = matrizUno.length;
+    const verCond =  verCuadradas(matrizUno,matrizDos);
+    let matrizUnoNueva :number [][] = [];
+    let matrizDosNueva :number [][] = [];
+    if(verCond == true){
+        for(let k = 0; k<long;k++){
+            for(let j = 0; j<long;j++){
+                if(k==j){
+                    let valor1 =  matrizUno[k][k];
+                    let valor2 =  matrizDos[k][k];
+                    
+                }else{
+
+                }
+            }
         }
-    }else{console.log("no se puede xd")} 
+    }else{console.log("no existe como hacer el cambio");}
 }
 
 
-*/
 
 
 

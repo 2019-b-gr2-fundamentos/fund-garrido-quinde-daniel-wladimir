@@ -1,4 +1,54 @@
 <?php
+$matrizejem = [	
+	[1],
+	[2,1],
+	[1,2,3],
+	["a"]
+];
+
+
+
+function verValidez ($a){
+	$d = 0;//flase
+	$c = 0;//true
+	$b = [1];
+	$ab = gettype($b);
+	for ($i=0; $i < count($a); $i++) { 
+		if ($ab == gettype($a[$i])) {
+			for ($j=0; $j < count($a[$i]); $j++) { 
+				if (is_integer($a[$i][$j])) {
+				}else{
+					$d++;
+					break;
+				}
+			}
+		}else{
+			$d++;
+			break;
+		}
+	}
+	if ($d == 0) {
+		return $b[0];
+		}else{
+		return $c;}
+}
+// 1 == true
+
+
+function obtenPrimeDim ($b){
+	$negativo = "no es matriz";
+	$a = verValidez($b);
+	if ($a == 1) {
+		$ac = count($b);
+		return $ac;
+	}else{
+		return $negativo;
+	}
+} 
+
+echo (obtenPrimeDim($matrizejem));
+
+
 function igualdad($a,$b){
 	$long1 = count($a);
 	$long1_1 = count($a[0]);
@@ -23,16 +73,6 @@ function igualdad($a,$b){
 		}	
 	}else{echo "no son de la misma dimension";}
 }
-
-$m =[
-[2,5],
-[3,1],
-[8,2]
-];
-
-$n =[[2,1],[3,8],[8,0]]; 
-igualdad($m,$n);
-  
 
 function suma($z){
 	$long9 = count($z);
@@ -59,6 +99,5 @@ function suma($z){
 	}
 }
 
-suma($m)
 
   ?>
