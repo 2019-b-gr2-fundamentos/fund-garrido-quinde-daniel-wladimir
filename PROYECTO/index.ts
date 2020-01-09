@@ -10,6 +10,6 @@ import = imporat
 as = como
 from= de 
 */
-import * as Sumalib from 'lib-garrido2019/lib/suma';
+import * as Sumalib from 'lib-garrido2019/lib/area';
 const respuesta = Sumalib(4,5)
 console.log('la respuesta es :',respuesta);
