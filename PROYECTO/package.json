@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lib-garrido2019": "^1.1.5"
+    "lib-garrido2019": "1.1.5"
   }
 }
