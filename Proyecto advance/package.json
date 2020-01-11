@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "empezar": "node index.js"
+    "empezar": "(tsc index.ts||echo) && node index.js"
   },
   "author": "",
   "license": "ISC"
