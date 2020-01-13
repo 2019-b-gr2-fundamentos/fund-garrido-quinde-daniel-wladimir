@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "lib-garrido2019": "^1.1.5"
+    "libreria-deber": "^3.0.5"
   },
   "devDependencies": {},
   "scripts": {
-    "empezar": "(tsc index.ts||echo) && node index.js"
+    "empezar": "node index.js"
   },
   "author": "",
   "license": "ISC"
